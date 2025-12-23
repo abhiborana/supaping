@@ -1,6 +1,4 @@
-"use server"
-
-import { decode, sign } from "jsonwebtoken";
+import { decode } from "jsonwebtoken";
 
 export const fetchSupaProject = async (projectUrl, token, table) => {
     return await fetch(`${projectUrl}/rest/v1/${table}?select=*`, {
@@ -11,10 +9,6 @@ export const fetchSupaProject = async (projectUrl, token, table) => {
             'Content-Type': 'application/json'
         }
     }).then(res => res.json());
-}
-
-export const createSecureJwt = async (payload) => {
-    return sign(payload, process.env.JWT_SALT);
 }
 
 export const decodeSecureJwt = async (token) => {

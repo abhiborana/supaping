@@ -1,6 +1,7 @@
 "use client";
 
-import { createSecureJwt, decodeSecureJwt, fetchSupaProject } from "@/actions";
+import { decodeSecureJwt, fetchSupaProject } from "@/actions/client";
+import { createSecureJwt } from "@/actions/server";
 import ProjectForm from "@/components/project-form";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
