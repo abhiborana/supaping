@@ -1,3 +1,4 @@
+import { Toaster } from "@/components/ui/sonner";
 import { cn } from "@/lib/utils";
 import { Geist } from "next/font/google";
 import "./globals.css";
@@ -15,7 +16,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={cn("antialiased", geist.className)}>{children}</body>
+      <body className={cn("antialiased", geist.className)}>
+        {children} <Toaster richColors theme="light" />
+      </body>
     </html>
   );
 }
